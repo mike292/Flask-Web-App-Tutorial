@@ -1,0 +1,21 @@
+Create a folder
+Create a website folder
+Create a file main.py //file that would run when start the webserver/site
+
+Inside the website folder
+static folder
+templates folder
+__init__.py //makes the website folder a python package
+models.py //store database models
+views.py //main views/frontend aspects
+auth.py
+
+On command prompt
+pip install flask // install flask // if pip is unrecognize, create path to pip from python folder
+	control panel - systems and security - systems - advance system settings - environmental variables
+	edit variable path - new button - URL path for python folder and scripts
+	ex. C:\Users\nicol\AppData\Local\Programs\Python\Python39
+	URL path to Scripts
+	ex. C:\Users\nicol\AppData\Local\Programs\Python\Python39\Scripts\
+pip install flask-login //Loging users in module
+pip install flask-sqlalchemy //Database module
