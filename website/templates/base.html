@@ -28,6 +28,7 @@
       </button>
       <div class="collapse navbar-collapse" id="navbar">
         <div class="navbar-nav">
+          <!-- Variable 'user' must be defined on every route that has this base.html extendeds -->
           {% if user.is_authenticated %}
           <a class="nav-item nav-link" id="home" href="/">Home</a>
           <a class="nav-item nav-link" id="logout" href="/logout">Logout</a>
@@ -46,6 +47,8 @@
     'error' %}
     <div class="alert alert-danger alter-dismisable fade show" role="alert">
       {{message}}
+
+      <!-- data-dismiss="alert" to remove the entire div alert class -->
       <button type="button" class="close" data-dismiss="alert">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -53,6 +56,8 @@
     {% else %}
     <div class="alert alert-success alter-dismisable fade show" role="alert">
       {{message}}
+
+      <!-- data-dismiss="alert" to remove the entire div alert class -->
       <button type="button" class="close" data-dismiss="alert">
         <span aria-hidden="true">&times;</span>
       </button>
@@ -77,6 +82,7 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- referencing the static folder on the website -->
     <script
       type="text/javascript"
       src="{{ url_for('static', filename='index.js') }}"
