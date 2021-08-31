@@ -32,13 +32,14 @@ def login():
         else:
             flash('Email does not exist!', category='error')
 
-    return render_template("login.html", User="Michael", Boolean=True)
+    return render_template("login.html", user=current_user)
 
 
 @auth.route('/logout')
-@login_required
+@login_required  # cannot access this route if not login
 def logout():
     logout_user()  # log out the current user that is stored on login_user
+    flash('You have successfully logged out', category='success')
     return redirect(url_for('auth.login'))
 
 
@@ -80,4 +81,4 @@ def sign_up():
             # after creating new account goto home page
             return redirect(url_for('views.home'))
 
-    return render_template("sign_up.html")
+    return render_template("sign_up.html", user=current_user)
